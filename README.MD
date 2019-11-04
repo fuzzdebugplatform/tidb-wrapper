@@ -36,7 +36,7 @@ http://localhost:4333/test?key=9
 查看当前所有在统计的数据与摘要：
 
 ```
-http://localhost:4333/status
+http://localhost:43222/status
 ```
 
 ```json
