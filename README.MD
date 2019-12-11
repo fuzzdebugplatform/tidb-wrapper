@@ -1,7 +1,7 @@
 # tidb-wrapper
 
 
-## 编译该项目
+## compile this project
 
 ```
 # first you should install go-bindata
@@ -10,30 +10,29 @@ go get -u github.com/jteeuwen/go-bindata/...
 make
 ```
 
-## 打包示例项目
+## wrap the example project in this repo
 
 
 ```
 ./tidb-wrapper -D example-project/
 ```
 
-它将生成`mywrapper`子目录，里面就是生成的代码，运行该项目。
+It will generates a subdirectory named `mywrapper`, in which is the generated code. Run this project,
 
-默认情况下，统计功能是关闭的，需要使用`switch`接口开启（统计接口监听在43222）：
+Trace is closed in default, you need open it with `switch` interface (trace interfaces listen on 43222):
 
 ```
 http://localhost:43222/switch
 ```
 
-访问示例项目的接口：
+Visit app interface of example project:
 
 ```
 http://localhost:4333/test?key=9
 # return 10
 ```
 
-
-查看当前所有在统计的数据与摘要：
+See all traced inputs and corresponding digest:
 
 ```
 http://localhost:43222/status
@@ -45,7 +44,7 @@ http://localhost:43222/status
 }
 ```
 
-查看刚刚 key = 9 所覆盖的文件路径:
+See trace of input `key = 9`:
 
 ```
 http://localhost:43222/trace/248be6a1
